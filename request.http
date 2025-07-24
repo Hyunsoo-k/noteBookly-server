@@ -1,0 +1,47 @@
+GET http://localhost:3000/post/68822d8d3dc9b42c8520ec91
+
+###
+
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+  "writer": "",
+  "password": "helloworld",
+  "title": "유효성 검증 제목4",
+  "content": "유효성 검증 내용4"
+}
+
+###
+
+POST http://localhost:3000/post/687cca79efa814bd450740ba/check-post-password
+Content-Type: application/json
+
+{
+  "password": "helloworld"
+}
+
+###
+
+PATCH http://localhost:3000/post/68822d8d3dc9b42c8520ec95
+Content-Type: application/json
+
+{
+  "writer": "운영자",
+  "title": "유효성 검증 제목4(수정)",
+  "password": "helloworld",
+  "content" : "유효성 검증 내용4(수정)"
+}
+
+###
+
+DELETE http://localhost:3000/post/687364a0e0668c615ae64b93
+Content-Type: application/json
+
+{
+  "password": "hello"
+}
+
+###
+
+GET http://localhost:3000/post-list?cursor=687cca9defa814bd450740c4

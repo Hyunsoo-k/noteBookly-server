@@ -1,0 +1,28 @@
+{
+  "name": "note-bookly-server",
+  "version": "1.0.0",
+  "description": "noteBookly server",
+  "license": "ISC",
+  "author": "Hyunsoo-k",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --exec npx tsx src/app.ts",
+    "touchDb": "npx tsx db-utils/edit.ts"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "nodemon": "^3.1.10",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cheerio": "^1.1.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.3"
+  }
+}
