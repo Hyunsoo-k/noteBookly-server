@@ -21,3 +21,5 @@ app.use('/post', postRouter);
 app.use('/post-list', postListRouter)
 
 app.listen(3000, (): void => { console.log('server on'); });
+
+export default app;
