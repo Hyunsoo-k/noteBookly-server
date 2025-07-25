@@ -6,7 +6,7 @@
   "author": "Hyunsoo-k",
   "type": "module",
   "scripts": {
-    "start": "nodemon --exec npx tsx src/app.ts",
+    "start": "nodemon --exec npx tsx src/app.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
