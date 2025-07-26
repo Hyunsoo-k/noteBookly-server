@@ -18,8 +18,6 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/post', postRouter);
-app.use('/post-list', postListRouter)
-
-app.listen(3000, (): void => { console.log('server on'); });
+app.use('/post-list', postListRouter);
 
 export default app;
