@@ -8,7 +8,6 @@
   "scripts": {
     "start": "nodemon --exec npx tsx src/app.ts",
     "build": "tsc && tsc-alias",
-    "vercel-build": "npm run build"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
