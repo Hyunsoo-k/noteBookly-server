@@ -5,6 +5,7 @@
   "license": "ISC",
   "author": "Hyunsoo-k",
   "type": "module",
+  "private": true,
   "scripts": {
     "start": "nodemon --exec npx tsx src/app.ts",
     "build": "tsc && tsc-alias"
