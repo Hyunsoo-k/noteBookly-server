@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon --exec npx tsx src/app.ts",
-    "build": "tsc && tsc-alias",
+    "build": "tsc && tsc-alias"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
