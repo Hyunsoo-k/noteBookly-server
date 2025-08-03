@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose, { Error } from 'mongoose';
 
+import rootRouter from './routes/root.js';
 import postRouter from '@/routes/post.js';
 import postListRouter from '@/routes/post-list.js';
 
@@ -17,6 +18,7 @@ mongoose
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.get('/', rootRouter);
 app.use('/post', postRouter);
 app.use('/post-list', postListRouter);
 
