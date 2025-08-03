@@ -3,7 +3,7 @@
     "target": "ES6",
     "module": "commonjs",
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": ".",
     "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -14,5 +14,8 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*",
+    "api/**/*"
+  ]
 }
