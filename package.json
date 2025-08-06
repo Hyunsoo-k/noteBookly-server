@@ -6,7 +6,7 @@
   "author": "Hyunsoo-k",
   "private": true,
   "scripts": {
-    "start": "nodemon --exec npx tsx src/app.ts",
+    "start": "nodemon --exec npx tsx api/app.ts",
     "build": "tsc && tsc-alias"
   },
   "devDependencies": {
