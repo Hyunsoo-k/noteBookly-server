@@ -45,4 +45,4 @@ note-bookly-server
 ```
 
 ## 특징
-기존 타입스크립트를 배포하기위해선 tsc와 같은 트랜스파일러를 사용한 빌드 후에 output directory를 배포하지만 Vercel의 @vercel/node를 이용해 트랜스파일링 하지 않고 vercel 내부 엔진에서 빌드과정을 처리하므로 로컬환경의 폴더구조와 동일하게 처리가 가능하게 했습니다.
+타입스크립트 컴파일을 Vercel의 @vercel/node를 이용해 로컬환경에서의 폴더구조와 동일하게 처리가 가능하게 했습니다.(output directory 설정 x)
