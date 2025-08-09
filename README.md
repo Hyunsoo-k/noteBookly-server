@@ -23,7 +23,7 @@ npm run dev
 ## 폴더 구조
 
 ```
-note-bookly-server
+root
 ├─ api
 │  └─ index.ts // 프로덕션 엔트리 포인트
 ├─ dev-api
