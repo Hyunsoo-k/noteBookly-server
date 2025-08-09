@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose, { Error } from 'mongoose';
+import cors from 'cors';
 
 import postRouter from '../src/routes/post.js';
 import postListRouter from '../src/routes/post-list.js';
@@ -13,6 +14,11 @@ mongoose
   .catch((err: Error): void => { console.log('Error connecting to MongoDB', err); });
 
 const app = express();
+app.use(cors({
+  origin: [
+    process.env.FRONT_END_DEVELOP_URL as string,
+  ]
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/post', postRouter);
