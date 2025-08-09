@@ -6,11 +6,9 @@ import postRouter from '../src/routes/post.js';
 import postListRouter from '../src/routes/post-list.js';
 
 dotenv.config();
+
 mongoose
-  .connect(
-    process.env.DATABASE_URL as string,
-    { autoIndex: false }
-  )
+  .connect(process.env.DATABASE_URL as string, { autoIndex: false })
   .then((): void => { console.log('connected to mongoDb'); })
   .catch((err: Error): void => { console.log('Error connecting to MongoDB', err); });
 
