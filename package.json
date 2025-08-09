@@ -6,7 +6,7 @@
   "author": "Hyunsoo-k",
   "private": true,
   "scripts": {
-    "start": "nodemon --exec npx tsx api/index.ts"
+    "dev": "nodemon --exec npx tsx dev-api/index.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
