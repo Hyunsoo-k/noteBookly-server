@@ -30,7 +30,6 @@ note-bookly-server
 │  └─ index.ts // 개발환경 엔트리 포인트
 ├─ package-lock.json
 ├─ package.json
-├─ request.http
 ├─ src
 │  ├─ controller
 │  ├─ error-handler
@@ -41,7 +40,6 @@ note-bookly-server
 │  └─ utils
 ├─ tsconfig.json
 └─ vercel.json
-
 ```
 
 ## 특징
