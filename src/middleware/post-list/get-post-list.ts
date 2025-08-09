@@ -2,9 +2,9 @@ import type { NextFunction, Request, Response } from "express";
 import type { QueryOptions } from "mongoose";
 import { Types } from 'mongoose';
 
-import PostModel from "@/model/post.js";
-import type { PostWithoutPassword } from "@/types/post.js";
-import optimizePost from "@/utils/optimize-post.js";
+import PostModel from "../../model/post.js";
+import type { PostWithoutPassword } from "../../types/post.js";
+import optimizePost from "../../utils/optimize-post.js";
 
 interface Query {
   select?: 'writer' | 'titleAndContent';
