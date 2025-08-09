@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
-import PostModel from '@/model/post.js';
+import PostModel from '../../model/post.js';
 
 const checkPostPassword = async (
   req: Request,

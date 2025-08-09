@@ -44,4 +44,8 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/post-list?cursor=687cca9defa814bd450740c4
+GET http://localhost:3000/post-list
+
+###
+
+GET https://note-bookly-server.vercel.app/post-list

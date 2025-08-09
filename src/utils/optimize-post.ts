@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 
-import type { PostWithoutPassword } from '@/types/post.js';
+import type { PostWithoutPassword } from '../types/post.js';
 
 const optimizePost = async (post: PostWithoutPassword) => {
   const { title, content } = post;
