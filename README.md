@@ -1,5 +1,5 @@
 ## noteBookly-server
-noteBookly 프로젝트(https://github.com/Hyunsoo-k/noteBookly)의 RESTful-api 서버
+noteBookly 프로젝트(https://github.com/Hyunsoo-k/noteBookly) 의 RESTful-api 서버
 
 ## 기술 스택
 - typescript
