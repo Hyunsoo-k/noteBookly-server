@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "commonjs",
-    "outDir": "dist",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
