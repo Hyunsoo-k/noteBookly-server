@@ -27,6 +27,12 @@ const PostSchema = new Schema(
       trim: true,
       /** contenteditable input value (can't validate string legnth, validate in client) */
     },
+    subTitle: {
+      type: String,
+      default: null,
+      maxLength: [40, '소제목은 40글자 이하여야 합니다.'],
+      trim: true,
+    },
     content: {
       type: String,
       required: [true, '내용을 입력해 주세요.'],
