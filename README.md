@@ -1,5 +1,5 @@
 ## noteBookly-server
-noteBookly 프로젝트(https://github.com/Hyunsoo-k/noteBookly)의 RESTful-api 서버
+noteBookly 프로젝트(https://github.com/Hyunsoo-k/noteBookly) 의 RESTful-api 서버
 
 ## 기술 스택
 - typescript
@@ -23,14 +23,13 @@ npm run dev
 ## 폴더 구조
 
 ```
-note-bookly-server
+root
 ├─ api
 │  └─ index.ts // 프로덕션 엔트리 포인트
 ├─ dev-api
 │  └─ index.ts // 개발환경 엔트리 포인트
 ├─ package-lock.json
 ├─ package.json
-├─ request.http
 ├─ src
 │  ├─ controller
 │  ├─ error-handler
@@ -41,7 +40,6 @@ note-bookly-server
 │  └─ utils
 ├─ tsconfig.json
 └─ vercel.json
-
 ```
 
 ## 특징
