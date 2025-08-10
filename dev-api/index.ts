@@ -25,6 +25,6 @@ app.use(express.json());
 app.use('/post', postRouter);
 app.use('/post-list', postListRouter);
 
-app.listen(process.env.PORT as string, () => { console.log('server on'); });
+app.listen(process.env.SERVER_DEVELOP_URL as string, () => { console.log('server on'); });
 
 export default app;
