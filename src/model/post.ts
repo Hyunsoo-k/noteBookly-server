@@ -25,7 +25,7 @@ const PostSchema = new Schema(
       type: String,
       required: [true, '제목을 입력해 주세요.'],
       trim: true,
-      /** contenteditable input value (can't validate string legnth, validate in client) */
+      /** contenteditable, 클라이언트에서 검증 필요*/
     },
     subTitle: {
       type: String,
@@ -33,10 +33,15 @@ const PostSchema = new Schema(
       maxLength: [40, '소제목은 40글자 이하여야 합니다.'],
       trim: true,
     },
+    titleTextAlign: {
+      type: String,
+      enum: ["left", "center"],
+      default: "left"
+    },
     content: {
       type: String,
       required: [true, '내용을 입력해 주세요.'],
-      /** contenteditable input value (can't validate string legnth, validate in client */
+      /** contenteditable, 클라이언트에서 검증 필요*/
     },
     isEdited: {
       type: Boolean,
