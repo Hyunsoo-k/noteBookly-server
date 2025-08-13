@@ -1,27 +1,27 @@
-import { Types } from 'mongoose';
+import { Types } from "mongoose";
 
 interface Post {
-  _id: Types.ObjectId,
+  _id: Types.ObjectId;
   writer: string;
   password: string;
-  thumbnailSrc: string;
+  Url: string;
   title: string;
   content: string;
   isEdited: boolean;
-  createdAt: Date,
-  updatedAt: Date,
+  createdAt: Date;
+  updatedAt: Date;
   __v: number;
-};
+}
 
 interface PostWithoutPassword {
-  _id: Types.ObjectId,
+  _id: Types.ObjectId;
   writer: string;
-  thumbnailSrc: string;
+  Url: string;
   title: string;
   content: string;
   isEdited: boolean;
-  createdAt: Date,
-  updatedAt: Date,
+  createdAt: Date;
+  updatedAt: Date;
   __v: number;
 }
 

@@ -17,7 +17,7 @@ const PostSchema = new Schema(
       /** can't validate hashed password length */
       trim: true,
     },
-    thumbnailSrc: {
+    thumbnailUrl: {
       type: String,
       default: null,
     },
@@ -53,10 +53,6 @@ const PostSchema = new Schema(
     timestamps: true,
   }
 );
-
-PostSchema.pre('save', async function() {
-  console.log(this);
-});
 
 const PostModel = model('Post', PostSchema);
 
