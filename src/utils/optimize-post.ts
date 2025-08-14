@@ -7,7 +7,7 @@ const optimizePost = async (post: PostWithoutPassword) => {
   const $title = cheerio.load(title);
   const optimizedTitle = $title.text();
   const $content = cheerio.load(content);
-  const optimizedContent = $content.text().slice(0, 100);
+  const optimizedContent = $content.text().slice(0, 250);
 
   return {
     ...post,
