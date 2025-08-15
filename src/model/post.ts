@@ -33,7 +33,7 @@ const PostSchema = new Schema(
       maxLength: [40, '소제목은 40글자 이하여야 합니다.'],
       trim: true,
     },
-    titleTextAlign: {
+    headerAlign: {
       type: String,
       enum: ["left", "center"],
       default: "left"

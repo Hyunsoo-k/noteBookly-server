@@ -4,8 +4,9 @@ interface Post {
   _id: Types.ObjectId;
   writer: string;
   password: string;
-  Url: string;
   title: string;
+  subTitle: string;
+  headerAlign: "left" | "center";
   content: string;
   isEdited: boolean;
   createdAt: Date;
@@ -16,8 +17,9 @@ interface Post {
 interface PostWithoutPassword {
   _id: Types.ObjectId;
   writer: string;
-  Url: string;
   title: string;
+  subTitle: string;
+  headerAlign: "left" | "center";
   content: string;
   isEdited: boolean;
   createdAt: Date;
