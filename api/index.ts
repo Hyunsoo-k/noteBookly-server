@@ -15,11 +15,21 @@ mongoose
 
 const app = express();
 app.use(cors({
-  origin: [
-    process.env.FRONT_END_DEVELOP_URL as string,
-    process.env.FRONT_END_PRODUCTION_URL as string
-  ]
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      process.env.FRONT_END_DEVELOP_URL,
+      process.env.FRONT_END_PRODUCTION_URL,
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
 }));
+app.options('*', cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/post', postRouter);
