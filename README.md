@@ -1,6 +1,9 @@
 ## noteBookly-server
 noteBookly 프로젝트(https://github.com/Hyunsoo-k/noteBookly) 의 RESTful-api 서버
 
+## 개발 인원
+1인 개발
+
 ## 기술 스택
 - typescript
 - express
