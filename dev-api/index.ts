@@ -18,6 +18,7 @@ app.use(cors({
   origin: [
     process.env.SERVER_DEVELOP_URL as string,
     process.env.FRONT_END_DEVELOP_URL as string,
+    process.env.FRONT_END_PRODUCTION_URL as string
   ]
 }));
 app.use(express.urlencoded({ extended: true }));
