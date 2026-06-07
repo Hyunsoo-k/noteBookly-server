@@ -2,9 +2,9 @@ import type { NextFunction, Request, Response } from "express";
 import type { QueryOptions } from "mongoose";
 import { Types } from 'mongoose';
 
-import PostModel from "../../model/post.js";
 import type { PostWithoutPassword } from "../../types/post.js";
-import optimizePost from "../../utils/optimize-post.js";
+import PostModel from "../../model/post.js";
+import optimizePost from "../../utils/optimizePost.js";
 
 interface Query {
   select?: 'writer' | 'titleAndContent';
@@ -12,7 +12,7 @@ interface Query {
   cursor?: string;
 };
 
-const getPostList = async(
+const getPosts = async(
   req: Request,
   res: Response,
   next: NextFunction
@@ -55,22 +55,22 @@ const getPostList = async(
     }
   }
 
-  const postList: PostWithoutPassword[] = await PostModel
+  const posts: PostWithoutPassword[] = await PostModel
    .find(filter, projectionPassword)
    .sort({ _id: -1 })
    .limit(limit + 1)
    .lean();
    
-  const hasNextPage: boolean = postList.length > limit;
+  const hasNextPage: boolean = posts.length > limit;
   if (hasNextPage) {
-    postList.pop();
+    posts.pop();
   }
 
   const optimizedPostList
-    = await Promise.all(postList.map((post: PostWithoutPassword) => optimizePost(post)));
-  res.locals.postList = optimizedPostList;
+    = await Promise.all(posts.map((post: PostWithoutPassword) => optimizePost(post)));
+  res.locals.posts = optimizedPostList;
   res.locals.hasNextPage = hasNextPage;
   next();
 };
 
-export default getPostList;
+export default getPosts;

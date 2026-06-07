@@ -4,7 +4,7 @@ import mongoose, { Error } from 'mongoose';
 import cors from 'cors';
 
 import postRouter from '../src/routes/post.js';
-import postListRouter from '../src/routes/post-list.js';
+import postListRouter from '../src/routes/posts.js';
 
 dotenv.config();
 
@@ -24,8 +24,8 @@ app.use(cors({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/post', postRouter);
-app.use('/post-list', postListRouter);
+app.use('/posts', postListRouter);
 
-app.listen(process.env.SERVER_DEVELOP_URL as string, () => { console.log('server on'); });
+app.listen(Number(process.env.SERVER_DEVELOP_PORT) as number, () => { console.log('server on'); });
 
 export default app;
