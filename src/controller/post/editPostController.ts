@@ -1,9 +1,26 @@
-import { Request, Response } from 'express';
+import type { Request, Response, NextFunction } from 'express';
 
-const Controller = async (req: Request, res: Response): Promise<any> => {
-  const { editedPost } = res.locals;
-  
-  return res.status(200).json(editedPost);
+import PostModel from '../../model/post.js';
+
+const editPostController = async (
+  req: Request, 
+  res: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const { postId } = req.params;
+    const { updateData } = res.locals;
+
+    const editedPost = await PostModel.findByIdAndUpdate(
+      postId,
+      { $set: updateData },
+      { new: true }
+    ).lean();
+
+    return res.status(200).json(editedPost);
+  } catch (error) {
+    next(error);
+  }
 };
 
-export default Controller;
+export default editPostController;
