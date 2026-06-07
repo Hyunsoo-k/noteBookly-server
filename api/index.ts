@@ -1,10 +1,11 @@
+import type { Error } from 'mongoose';
 import express from 'express';
 import dotenv from 'dotenv';
-import mongoose, { Error } from 'mongoose';
+import mongoose from 'mongoose';
 import cors from 'cors';
 
 import postRouter from '../src/routes/post.js';
-import postListRouter from '../src/routes/post-list.js';
+import postsRouter from '../src/routes/posts.js';
 
 dotenv.config();
 
@@ -24,6 +25,6 @@ app.options('*', cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/post', postRouter);
-app.use('/post-list', postListRouter);
+app.use('/posts', postsRouter);
 
 export default app;
