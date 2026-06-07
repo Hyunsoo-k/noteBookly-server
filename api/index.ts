@@ -20,7 +20,7 @@ app.use(cors({
     process.env.FRONT_END_PRODUCTION_URL as string
   ]
 }));
-app.options('*', cors());
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/post', postRouter);
