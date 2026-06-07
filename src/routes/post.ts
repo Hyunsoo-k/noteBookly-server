@@ -1,22 +1,22 @@
 import express from 'express';
 import asyncHandler from 'express-async-handler';
 
-import getPostMiddleWare from '../middleware/post/get-post.js';
-import getPostController from '../controller/post/get-post.js';
+import getPostMiddleWare from '../middleware/post/getPostMiddleware.js';
+import getPostController from '../controller/post/getPostController.js';
 
-import createPostMiddleware from '../middleware/post/create-post.js';
-import createPostController from '../controller/post/create-post.js';
+import createPostMiddleware from '../middleware/post/createPostMiddleware.js';
+import createPostController from '../controller/post/createPostController.js';
 
-import editPostMiddleware from '../middleware/post/edit-post.js';
-import editPostController from '../controller/post/edit-post.js';
+import editPostMiddleware from '../middleware/post/editPostMiddleware.js';
+import editPostController from '../controller/post/editPostController.js';
 
-import checkPostPasswordMiddleware from '../middleware/post/check-post-password.js';
-import checkPostPasswordController from '../controller/post/check-post-password.js';
+import checkPostPasswordMiddleware from '../middleware/post/checkPasswordMiddleware.js';
+import checkPostPasswordController from '../controller/post/checkPasswordController.js';
 
-import deletePostMiddleware from '../middleware/post/delete-post.js';
-import deletePostController from '../controller/post/delete-post.js';
+import deletePostMiddleware from '../middleware/post/deletePostMiddleware.js';
+import deletePostController from '../controller/post/deletePostController.js';
 
-import errorHandler from '../error-handler/error-handler.js';
+import errorHandler from '../errorHandler/errorHandler.js';
 
 const postRouter = express.Router();
 postRouter
@@ -33,7 +33,7 @@ postRouter
     errorHandler
   )
   .post(
-    '/:postId/check-post-password',
+    '/:postId/checkPostPassword',
     asyncHandler(checkPostPasswordMiddleware),
     asyncHandler(checkPostPasswordController),
     errorHandler

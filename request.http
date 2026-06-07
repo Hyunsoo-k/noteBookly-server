@@ -1,6 +1,6 @@
 ### DEVELOP
 
-GET http://localhost:3000/post-list
+GET http://localhost:3000/posts
 
 ###
 
