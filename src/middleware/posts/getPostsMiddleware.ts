@@ -12,7 +12,7 @@ interface Query {
   cursor?: string;
 };
 
-const getPosts = async(
+const getPostsMiddleware = async(
   req: Request,
   res: Response,
   next: NextFunction
@@ -20,7 +20,9 @@ const getPosts = async(
   const { select, query, cursor }: Query = req.query;
 
   let filter = {};
+
   const projectionPassword: QueryOptions['projection'] = { password: 0 };
+
   const limit = 8;
 
   if (select || query) {
@@ -62,15 +64,19 @@ const getPosts = async(
    .lean();
    
   const hasNextPage: boolean = posts.length > limit;
+
   if (hasNextPage) {
     posts.pop();
   }
 
   const optimizedPostList
     = await Promise.all(posts.map((post: PostWithoutPassword) => optimizePost(post)));
+
   res.locals.posts = optimizedPostList;
+  
   res.locals.hasNextPage = hasNextPage;
+
   next();
 };
 
-export default getPosts;
+export default getPostsMiddleware;

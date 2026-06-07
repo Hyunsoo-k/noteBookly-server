@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-const getPosts = async (req: Request, res: Response): Promise<any> => {
+const getPostsController = async (req: Request, res: Response): Promise<any> => {
   const { posts, hasNextPage } = res.locals;
   return res.status(200).json({
     posts,
@@ -8,4 +8,4 @@ const getPosts = async (req: Request, res: Response): Promise<any> => {
   });
 };
 
-export default getPosts;
+export default getPostsController;
