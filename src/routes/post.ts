@@ -1,20 +1,20 @@
 import express from 'express';
 import asyncHandler from 'express-async-handler';
 
-import getPostMiddleWare from '../middleware/post/getPost.js';
-import getPostController from '../controller/post/getPost.js';
+import getPostMiddleWare from '../middleware/post/getPostMiddleware.js';
+import getPostController from '../controller/post/getPostController.js';
 
-import createPostMiddleware from '../middleware/post/createPost.js';
-import createPostController from '../controller/post/createPost.js';
+import createPostMiddleware from '../middleware/post/createPostMiddleware.js';
+import createPostController from '../controller/post/createPostController.js';
 
-import editPostMiddleware from '../middleware/post/editPost.js';
-import editPostController from '../controller/post/editPost.js';
+import editPostMiddleware from '../middleware/post/editPostMiddleware.js';
+import editPostController from '../controller/post/editPostController.js';
 
-import checkPostPasswordMiddleware from '../middleware/post/checkPostPassword.js';
-import checkPostPasswordController from '../controller/post/checkPostPassword.js';
+import checkPostPasswordMiddleware from '../middleware/post/checkPasswordMiddleware.js';
+import checkPostPasswordController from '../controller/post/checkPasswordController.js';
 
-import deletePostMiddleware from '../middleware/post/deletePost.js';
-import deletePostController from '../controller/post/deletePost.js';
+import deletePostMiddleware from '../middleware/post/deletePostMiddleware.js';
+import deletePostController from '../controller/post/deletePostController.js';
 
 import errorHandler from '../errorHandler/errorHandler.js';
 
