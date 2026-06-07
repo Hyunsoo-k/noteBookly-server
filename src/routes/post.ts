@@ -21,7 +21,7 @@ import errorHandler from '../error-handler/error-handler.js';
 const postRouter = express.Router();
 postRouter
   .get(
-    '/:post_id',
+    '/:postId',
     asyncHandler(getPostMiddleWare),
     asyncHandler(getPostController),
     errorHandler
@@ -33,19 +33,19 @@ postRouter
     errorHandler
   )
   .post(
-    '/:post_id/check-post-password',
+    '/:postId/check-post-password',
     asyncHandler(checkPostPasswordMiddleware),
     asyncHandler(checkPostPasswordController),
     errorHandler
   )
   .patch(
-    '/:post_id',
+    '/:postId',
     asyncHandler(editPostMiddleware),
     asyncHandler(editPostController),
     errorHandler
   )
   .delete(
-    '/:post_id',
+    '/:postId',
     asyncHandler(deletePostMiddleware),
     asyncHandler(deletePostController),
     errorHandler

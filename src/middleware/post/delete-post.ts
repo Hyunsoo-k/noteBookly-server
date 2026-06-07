@@ -8,9 +8,9 @@ const deletePost = async (
   res: Response,
   next: NextFunction
 ): Promise<any> => {
-  const post_id = req.params.post_id;
+  const postId = req.params.postId;
   const { password } = req.body;
-  const post = await PostModel.findById(post_id).lean();
+  const post = await PostModel.findById(postId).lean();
   if (!post) {
     return res.status(404).send({ message: "게시글을 찾을 수 없습니다." });
   }
@@ -20,7 +20,7 @@ const deletePost = async (
     return res.status(401).send({ message: "비밀번호가 일치하지 않습니다. "});
   }
 
-  await PostModel.findByIdAndDelete(post_id);
+  await PostModel.findByIdAndDelete(postId);
   next();
 };
 

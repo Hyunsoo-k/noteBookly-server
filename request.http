@@ -1,3 +1,9 @@
+### DEVELOP
+
+GET http://localhost:3000/post-list
+
+###
+
 GET http://localhost:3000/post/68822d8d3dc9b42c8520ec91
 
 ###
@@ -42,9 +48,9 @@ Content-Type: application/json
   "password": "hello"
 }
 
-###
+### PRODUCTION
 
-GET http://localhost:3000/post-list
+GET https://note-bookly-server.vercel.app/post/68822d8d3dc9b42c8520ec95
 
 ###
 

@@ -8,8 +8,8 @@ const editPost = async (
   res: Response,
   next: NextFunction
 ): Promise<any> => {
-  const post_id = req.params.post_id;
-  const post = await PostModel.findById(post_id);
+  const postId = req.params.postId;
+  const post = await PostModel.findById(postId);
   if (!post) {
     return res.status(404).json({ message: '게시글을 찾을 수 없습니다.' });
   }
@@ -22,7 +22,7 @@ const editPost = async (
 
   const editedPost = await PostModel
     .findByIdAndUpdate(
-      post_id,
+      postId,
       {
         $set: {
           ...req.body,
