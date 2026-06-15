@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 const PostSchema = new Schema(
   {
-    writer: {
+    author: {
       type: String,
       required: [true, '작성자를 입력해 주세요.'],
       trim: true,
@@ -17,7 +17,7 @@ const PostSchema = new Schema(
       /** can't validate hashed password length */
       trim: true,
     },
-    thumbnailUrl: {
+    thumbnail: {
       type: String,
       default: null,
     },
