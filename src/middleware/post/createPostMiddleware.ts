@@ -7,9 +7,9 @@ const createPostMiddleware = async (
   next: NextFunction
 ): Promise<any> => {
   try {
-    const { password, title, content, writer } = req.body;
+    const { password, title, content, author } = req.body;
 
-    if (!title || !content || !writer) {
+    if (!title || !content || !author) {
       return res.status(400).json({ message: '제목, 내용, 작성자는 필수 입력 항목입니다.' });
     }
 

@@ -2,7 +2,7 @@ import { Types } from "mongoose";
 
 interface Post {
   _id: Types.ObjectId;
-  writer: string;
+  author: string;
   password: string;
   title: string;
   subTitle: string;
@@ -16,7 +16,7 @@ interface Post {
 
 interface PostWithoutPassword {
   _id: Types.ObjectId;
-  writer: string;
+  author: string;
   title: string;
   subTitle: string;
   headerAlign: "left" | "center";

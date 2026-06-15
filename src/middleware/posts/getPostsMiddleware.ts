@@ -2,7 +2,7 @@ import type { NextFunction, Request, Response } from "express";
 import { Types } from 'mongoose';
 
 interface Query {
-  select?: 'writer' | 'titleAndContent';
+  select?: 'author' | 'titleAndContent';
   query?: string;
   cursor?: string;
 }
@@ -17,7 +17,7 @@ const getPostsMiddleware = async (
   let filter: Record<string, any> = {};
 
   if (select || query) {
-    if (select !== 'writer' && select !== 'titleAndContent') {
+    if (select !== 'author' && select !== 'titleAndContent') {
       return res.status(400).json({ message: '잘못된 검색 옵션 입니다.' });
     }
 
@@ -25,8 +25,8 @@ const getPostsMiddleware = async (
       return res.status(400).json({ message: '검색어는 2글자 이상이어야 합니다.' });
     }
 
-    if (select === 'writer') {
-      filter.writer = { $regex: query, $options: 'i' }; 
+    if (select === 'author') {
+      filter.author = { $regex: query, $options: 'i' }; 
     } else if (select === 'titleAndContent') {
       filter.$or = [
         { title: { $regex: query, $options: "i" } },
